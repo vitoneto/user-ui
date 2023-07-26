@@ -6,5 +6,11 @@
     <p>{{ user.age }}</p>
     <p>{{ user.mailAddress }}</p>
     <p>{{ user.country }}</p>
+
+    <a routerLink="/editar-usuario">
+      <button (click)="saveUser(user)">
+        Editar {{ user.firstName }} {{ user.lastName }}
+      </button>
+    </a>
   </li>
 </ul>

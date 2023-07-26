@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
+import { user } from 'src/app/interfaces/user';
 
 @Component({
   selector: 'app-user-list',
@@ -19,6 +20,10 @@ export class UserListComponent implements OnInit {
     .catch(
       (error: any) => console.log(error)
     );
+  }
+
+  saveUser(user: user) {
+    this.userService.currentuser = user;
   }
 
 }
