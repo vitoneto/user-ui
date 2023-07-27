@@ -1,9 +1,12 @@
-<app-user-form
-  [firstName]="firstName"
-  [lastName]="lastName"
-  [age]="age"
-  [mailAddress]="mailAddress"
-  [country]="country"
-></app-user-form>
+<h1>Criar usuário</h1>
+<div class="base">
+  <app-user-form
+    [firstName]="firstName"
+    [lastName]="lastName"
+    [age]="age"
+    [mailAddress]="mailAddress"
+    [country]="country"
+  ></app-user-form>
 
-<button (click)="createUser()">Criar usuário</button>
+  <button (click)="createUser()">Criar usuário</button>
+</div>
