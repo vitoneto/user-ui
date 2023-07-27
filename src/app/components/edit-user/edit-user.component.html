@@ -1,18 +1,13 @@
-<p>edit-user works!</p>
+<h1>Editar usuário</h1>
+<div class="base">
+  <app-user-form
+    [firstName]="firstName"
+    [lastName]="lastName"
+    [age]="age"
+    [mailAddress]="mailAddress"
+    [country]="country"
+  ></app-user-form>
 
-<app-user-form
-  [firstName]="firstName"
-  [lastName]="lastName"
-  [age]="age"
-  [mailAddress]="mailAddress"
-  [country]="country"
-></app-user-form>
 
-
-<button (click)="changeUserData()">Alterar dados</button>
-
-<!-- firstName
-lasttName
-age
-mailAddress
-country -->
+  <button (click)="changeUserData()">Salvar</button>
+</div>
