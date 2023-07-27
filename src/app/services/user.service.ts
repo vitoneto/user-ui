@@ -38,4 +38,13 @@ export class UserService {
       )
     })
   }
+
+  createUser(user: user) {
+    return new Promise((resolve, reason) => {
+      this.http.post(this.url, user).subscribe(
+        (Response: any) => resolve(Response),
+        (Response: any) => reason(Response),
+      )
+    })
+  }
 }
