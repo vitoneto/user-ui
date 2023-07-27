@@ -29,4 +29,13 @@ export class UserService {
       )
     })
   }
+
+  deleteUser(user: user) {
+    return new Promise((resolve, reason) => {
+      this.http.delete(this.url + user.id).subscribe(
+        (response: any) => resolve(response),
+        (response: any) => reason(response)
+      )
+    })
+  }
 }

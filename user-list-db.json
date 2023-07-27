@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "firstName": "vito",
+      "lastName": "neto",
+      "age": "25",
+      "mailAddress": "vitoneto.dev@gmail.com",
+      "country": "Brazil",
+      "id": 2
+    }
+  ]
+}
