@@ -1,0 +1,18 @@
+header {
+  display: block;
+  width: 100vw;
+  height: 50px;
+  background-color: #212529;
+  border-bottom: 2px solid #fea511;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  position: relative;
+  a {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    h3 {
+      color: #fea511;
+    }
+  }
+}

@@ -10,6 +10,7 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { CreateUserComponent } from './components/create-user/create-user.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CreateUserComponent } from './components/create-user/create-user.compon
     UserListComponent,
     EditUserComponent,
     UserFormComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
