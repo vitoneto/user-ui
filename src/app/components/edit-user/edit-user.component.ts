@@ -10,6 +10,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class EditUserComponent implements OnInit {
   currentUser: any;
+  successMessage: boolean = false;
 
   firstName = new FormControl('');
   lastName = new FormControl('');
@@ -40,7 +41,15 @@ export class EditUserComponent implements OnInit {
     }
     console.log('atualizando usuário');
     console.log(upToDatedUser)
-    this.userService.updateUser(upToDatedUser);
+    this.userService.updateUser(upToDatedUser).then((Response: any) => {
+      this.successMessage = true;
+      setTimeout(() => {
+        this.successMessage = false;
+      }, 3000)
+    }).catch((error: any) => {
+      console.log('error');
+      console.log(error)
+    });
   }
 
 }

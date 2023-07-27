@@ -1,5 +1,6 @@
-<h1>Editar usuário</h1>
-<div class="base">
+<h1 *ngIf="currentUser">Editar usuário</h1>
+<h1 *ngIf="!currentUser">Nenhum usuário encontrado</h1>
+<div *ngIf="currentUser" class="base">
   <app-user-form
     [firstName]="firstName"
     [lastName]="lastName"
@@ -11,3 +12,7 @@
 
   <button (click)="changeUserData()">Salvar</button>
 </div>
+<a routerLink="/lista-de-usuarios">
+  <button *ngIf="!currentUser" (click)="changeUserData()">Lista de usuários</button>
+</a>
+<h2 class="successMessage" *ngIf="successMessage">Alteração realizada com sucesso</h2>

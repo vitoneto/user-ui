@@ -9,6 +9,7 @@ import { user } from 'src/app/interfaces/user';
 })
 export class UserListComponent implements OnInit {
   userList: any[] = [];
+  successMessage: boolean = false;
 
   constructor(public userService: UserService) { }
 
@@ -26,13 +27,19 @@ export class UserListComponent implements OnInit {
     this.userService.currentuser = user;
   }
 
-  deleteUser(user: user) {
+  deleteUser(user: user, index: number) {
     console.log('deletando user');
     console.log(user.id);
     this.userService.deleteUser(user).then(
       (Response: any) => {
-        console.log('deleted user');
+        this.successMessage = true;
+        setTimeout(() => {
+          this.successMessage = false;
+        }, 3000)
+        console.log('to delete user');
         console.log(user)
+        this.userList.splice(index, 1)
+        console.log(this.userList)
       }
     ).catch(
       (error: any) => {
