@@ -8,13 +8,15 @@ import { HomeComponent } from './pages/home/home.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UserFormComponent } from './components/user-form/user-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     UserListComponent,
-    EditUserComponent
+    EditUserComponent,
+    UserFormComponent
   ],
   imports: [
     BrowserModule,

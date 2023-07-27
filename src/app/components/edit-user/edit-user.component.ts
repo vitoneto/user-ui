@@ -38,7 +38,7 @@ export class EditUserComponent implements OnInit {
       mailAddress: this.mailAddress.value,
       country: this.country.value
     }
-    console.log('novo usuário');
+    console.log('atualizando usuário');
     console.log(upToDatedUser)
     this.userService.updateUser(upToDatedUser);
   }
