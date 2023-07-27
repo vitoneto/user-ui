@@ -1,0 +1,46 @@
+.wrapper {
+  ul {
+    display: block;
+    height: 700px;
+    min-height: 400px;
+    overflow: auto;
+    border: 1px solid #fda412;
+    background: #212529;
+    border-radius: 20px;
+    width: 700px;
+    margin: auto;
+    li {
+      margin: 10px auto;
+      max-width: 300px;
+      background: #212529;
+      border: 2px solid #fca311;
+      border-radius: 12px;
+      overflow: hidden;
+      padding-bottom: 10px;
+      p{
+        padding: 10px;
+        font-weight: bold;
+        &:not(span) {
+          font-weight: bold;
+        }
+        &:nth-child(odd) {
+          background: #000;
+        }
+        span {
+          color: #fca311;
+          font-weight: 100;
+        }
+      }
+
+      a {
+        display: block;
+        margin: 10px 0;
+        text-align: center;
+      }
+      button {
+        display: block;
+        margin: auto;
+      }
+    }
+  }
+}

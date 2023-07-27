@@ -1,17 +1,19 @@
-<h1>Lista de usuários</h1>
-<ul *ngIf="userList">
-  <li *ngFor="let user of userList">
-    <p>{{ user.firstName }}</p>
-    <p>{{ user.lastName }}</p>
-    <p>{{ user.age }}</p>
-    <p>{{ user.mailAddress }}</p>
-    <p>{{ user.country }}</p>
+<section class="wrapper">
+  <h1 class="center">Lista de usuários</h1>
+  <ul *ngIf="userList">
+    <li *ngFor="let user of userList">
+      <p><span>Name:</span> {{ user.firstName }}</p>
+      <p><span>Last name: </span>{{ user.lastName }}</p>
+      <p><span>Age:</span> {{ user.age }}</p>
+      <p><span>Mail: </span> {{ user.mailAddress }}</p>
+      <p><span>Country: </span>{{ user.country }}</p>
 
-    <a routerLink="/editar-usuario">
-      <button (click)="saveUser(user)">
-        Editar {{ user.firstName }} {{ user.lastName }}
-      </button>
-    </a>
-    <button (click)="deleteUser(user)">Deletar {{ user.firstName }} {{ user.lastName }}</button>
-  </li>
-</ul>
+      <a routerLink="/editar-usuario">
+        <button (click)="saveUser(user)">
+          Editar user {{ user.firstName }}
+        </button>
+      </a>
+      <button (click)="deleteUser(user)">Deletar user {{ user.firstName }}</button>
+    </li>
+  </ul>
+</section>

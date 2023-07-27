@@ -39,6 +39,4 @@ export class CreateUserComponent implements OnInit {
       console.log(error)
     });
   }
-
-
 }
