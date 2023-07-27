@@ -42,6 +42,10 @@ body {
   color: $gray-light;
 }
 
+input {
+  outline: none;
+}
+
 button {
   padding: 15px;
   border: 1px solid $yellow;
