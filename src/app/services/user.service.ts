@@ -6,7 +6,9 @@ import { user } from '../interfaces/user';
   providedIn: 'root'
 })
 export class UserService {
-  url = 'http://localhost:3000/users/';
+  localUrl = 'http://localhost:3000/users/';
+  mockUrl = 'https://64c3bbed67cfdca3b6603210.mockapi.io/api/v1/users/';
+  url = this.mockUrl;
   currentuser: any;
 
   constructor(public http: HttpClient) { }

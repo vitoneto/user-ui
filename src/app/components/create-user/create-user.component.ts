@@ -15,6 +15,7 @@ export class CreateUserComponent implements OnInit {
   age = new FormControl('');
   mailAddress = new FormControl('');
   country = new FormControl('');
+  successMessage: boolean = false;
 
   constructor(
     public userService: UserService
@@ -33,7 +34,11 @@ export class CreateUserComponent implements OnInit {
     }
     this.userService.createUser(newUser).then((Response) => {
       console.log('criado com sucesso');
-      console.log(Response)
+      console.log(Response);
+      this.successMessage = true;
+      setTimeout(() => {
+        this.successMessage = false;
+      }, 3000)
     }).catch((error) => {
       console.log('não criado com sucesso');
       console.log(error)
