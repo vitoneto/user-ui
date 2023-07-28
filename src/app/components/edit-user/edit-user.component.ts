@@ -8,6 +8,7 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './edit-user.component.html',
   styleUrls: ['./edit-user.component.scss']
 })
+
 export class EditUserComponent implements OnInit {
   currentUser: any;
   successMessage: boolean = false;
@@ -39,15 +40,12 @@ export class EditUserComponent implements OnInit {
       mailAddress: this.mailAddress.value,
       country: this.country.value
     }
-    console.log('atualizando usuário');
-    console.log(upToDatedUser)
     this.userService.updateUser(upToDatedUser).then((Response: any) => {
       this.successMessage = true;
       setTimeout(() => {
         this.successMessage = false;
       }, 3000)
     }).catch((error: any) => {
-      console.log('error');
       console.log(error)
     });
   }

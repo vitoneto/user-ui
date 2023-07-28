@@ -13,7 +13,6 @@ export class UserService {
 
   constructor(public http: HttpClient) { }
 
-
   getUsers() {
     return new Promise((resolve, reason) => {
       this.http.get(this.url).subscribe(

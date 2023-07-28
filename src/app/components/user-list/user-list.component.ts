@@ -7,6 +7,7 @@ import { user } from 'src/app/interfaces/user';
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.scss']
 })
+
 export class UserListComponent implements OnInit {
   userList: any[] = [];
   successMessage: boolean = false;
@@ -15,10 +16,10 @@ export class UserListComponent implements OnInit {
 
   ngOnInit(): void {
     this.userService.getUsers().then(
-      (response: any) => {this.userList = response
-      console.log(this.userList)}
-    )
-    .catch(
+      (response: any) => {
+        this.userList = response
+      }
+    ).catch(
       (error: any) => console.log(error)
     );
   }
@@ -28,25 +29,18 @@ export class UserListComponent implements OnInit {
   }
 
   deleteUser(user: user, index: number) {
-    console.log('deletando user');
-    console.log(user.id);
     this.userService.deleteUser(user).then(
       (Response: any) => {
         this.successMessage = true;
         setTimeout(() => {
           this.successMessage = false;
         }, 3000)
-        console.log('to delete user');
-        console.log(user)
         this.userList.splice(index, 1)
-        console.log(this.userList)
       }
     ).catch(
       (error: any) => {
-        console.log('delet user error');
         console.log(error);
       }
     );
   }
-
 }

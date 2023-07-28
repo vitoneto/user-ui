@@ -9,6 +9,7 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './create-user.component.html',
   styleUrls: ['./create-user.component.scss']
 })
+
 export class CreateUserComponent implements OnInit {
   firstName = new FormControl('');
   lastName = new FormControl('');
@@ -32,15 +33,13 @@ export class CreateUserComponent implements OnInit {
       mailAddress: this.mailAddress.value,
       country: this.country.value
     }
+
     this.userService.createUser(newUser).then((Response) => {
-      console.log('criado com sucesso');
-      console.log(Response);
       this.successMessage = true;
       setTimeout(() => {
         this.successMessage = false;
       }, 3000)
     }).catch((error) => {
-      console.log('não criado com sucesso');
       console.log(error)
     });
   }
